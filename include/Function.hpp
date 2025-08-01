@@ -2,7 +2,6 @@
 #define FUNCTION_HPP
 
 #include <string>
-#include <stdexcept>
 
 class Function {
 public:
