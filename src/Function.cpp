@@ -27,7 +27,7 @@ double Function::g_derivative(double x) const{
 
 // Define the target function f(x) = 5 + x^3 - ln(g(x))/(x-4)
 double Function::evaluate(double x) const {
-    validate_input(x);
+    validate(x);
     double x3 = x * x * x;
     double g = g_evaluate(x);
     double ln_g = std::log(g);
@@ -38,7 +38,7 @@ double Function::evaluate(double x) const {
 
 // Define the derivative of target function f'(x)
 double Function::derivative(double x) const {
-    validate_input(x);
+    validate(x);
     double x2 = x * x;
     double g =  g_evaluate(x);
     double dg = g_derivative(x);
