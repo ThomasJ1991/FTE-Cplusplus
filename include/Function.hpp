@@ -6,12 +6,6 @@
 
 class Function {
 public:
-    // Returns g(x), throws exception on invalid input
-    double g_evaluate(double x) const;
-
-    // Returns g'(x), throws exception on invalid input
-    double g_derivative(double x) const;
-
     // Returns f(x), throws exception on invalid input
     double evaluate(double x) const;
 
@@ -20,6 +14,16 @@ public:
 
     // Returns symbolic string
     std::string to_string() const;
+
+private:
+    // Returns g(x), throws exception on invalid input
+    double g_evaluate(double x) const;
+
+    // Returns g'(x), throws exception on invalid input
+    double g_derivative(double x) const;
+
+    // Validates the input variable
+    void validate(double x) const;
 };
 
 #endif // FUNCTION_HPP
