@@ -1,6 +1,20 @@
 #include "Function.hpp"
 #include <cmath>
 
+constexpr double UPPER_BOUND = std::sqrt(5.0);
+constexpr double LOWER_BOUND = 4.0 / 3.0;
+
+
+void Function::validate_input(double x) const {
+    // Explicit variable range: x < -sqrt(5) or (4/3 < x < sqrt(5))
+    if (!((x < -UPPER_BOUND) || (x > LOWER_BOUND && x < UPPER_BOUND))) {
+        std::ostringstream oss;
+        oss << "Input x = " << x << " is outside the valid boundary: "
+            << "x < -√5 or (4/3 < x < √5)";
+        throw std::domain_error(oss.str());
+    }
+}
+
 // Define the inner function g(x) = (x^2-5)*(4-3*x)
 double Function::g_evaluate(double x) const{
     return (x * x - 5.0) * (4.0 - 3.0 * x);  
@@ -13,16 +27,9 @@ double Function::g_derivative(double x) const{
 
 // Define the target function f(x) = 5 + x^3 - ln(g(x))/(x-4)
 double Function::evaluate(double x) const {
+    validate_input(x);
     double x3 = x * x * x;
     double g = g_evaluate(x);
-
-    if (g <= 0) {
-        throw std::domain_error("ln(g(x)) domain error: (x^2 - 5)(4 - 3x) <= 0");
-    }
-    if (x == 4.0) {
-        throw std::domain_error("Division by zero: x - 4 == 0");
-    }
-
     double ln_g = std::log(g);
     double denom = x - 4.0;
 
@@ -31,17 +38,9 @@ double Function::evaluate(double x) const {
 
 // Define the derivative of target function f'(x)
 double Function::derivative(double x) const {
+    validate_input(x);
     double x2 = x * x;
     double g =  g_evaluate(x);
-
-  
-    if (g <= 0) {
-        throw std::domain_error("ln(g(x)) domain error: (x^2 - 5)(4 - 3x) <= 0");
-    }
-    if (x == 4.0) {
-        throw std::domain_error("Division by zero: x - 4 == 0");
-    }
-
     double dg = g_derivative(x);
     double ln_g = std::log(g);
     double denom = x - 4.0;
