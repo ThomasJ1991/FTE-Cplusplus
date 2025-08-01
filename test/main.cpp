@@ -27,7 +27,7 @@ int main() {
         std::cout << "\nContinue with a new input x? (y/n): ";
         std::cin >> choice;
 
-    } while (toppper(choice) == 'Y');
+    } while (toupper(choice) == 'Y');
 
     std::cout << "End of the function\n";
     return 0;
