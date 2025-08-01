@@ -5,7 +5,7 @@ constexpr double UPPER_BOUND = std::sqrt(5.0);
 constexpr double LOWER_BOUND = 4.0 / 3.0;
 
 
-void Function::validate_input(double x) const {
+void Function::validate(double x) const {
     // Explicit variable range: x < -sqrt(5) or (4/3 < x < sqrt(5))
     if (!((x < -UPPER_BOUND) || (x > LOWER_BOUND && x < UPPER_BOUND))) {
         std::ostringstream oss;
