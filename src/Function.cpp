@@ -1,5 +1,7 @@
 #include "Function.hpp"
 #include <cmath>
+#include <stdexcept>
+#include <sstream>
 
 constexpr double UPPER_BOUND = std::sqrt(5.0);
 constexpr double LOWER_BOUND = 4.0 / 3.0;
