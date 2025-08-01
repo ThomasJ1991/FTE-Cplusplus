@@ -12,7 +12,7 @@ double Function::g_derivative(double x) const{
 }
 
 // Define the target function f(x) = 5 + x^3 - ln(g(x))/(x-4)
-double Function::f_evaluate(double x) const {
+double Function::evaluate(double x) const {
     double x3 = x * x * x;
     double g = g_evaluate(x);
 
@@ -24,13 +24,13 @@ double Function::f_evaluate(double x) const {
     }
 
     double ln_g = std::log(g);
-    double denom = x - 4;
+    double denom = x - 4.0;
 
     return 5.0 + x3 - ln_g / denom;
 }
 
 // Define the derivative of target function f'(x)
-double Function::f_derivative(double x) const {
+double Function::derivative(double x) const {
     double x2 = x * x;
     double g =  g_evaluate(x);
 
