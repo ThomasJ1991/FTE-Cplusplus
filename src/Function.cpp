@@ -3,8 +3,8 @@
 #include <stdexcept>
 #include <sstream>
 
-constexpr double UPPER_BOUND = std::sqrt(5.0);
-constexpr double LOWER_BOUND = 4.0 / 3.0;
+const double UPPER_BOUND = std::sqrt(5.0);
+const double LOWER_BOUND = 4.0 / 3.0;
 
 
 void Function::validate(double x) const {
