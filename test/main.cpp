@@ -8,9 +8,6 @@ int main() {
     char choice;
     
     std::cout << f.to_string() << "\n";
-    std::cout << "Enter x: ";
-    std::cin >> x;
-
     do {
         std::cout << "\nEnter a value for x: ";
         std::cin >> x;
