@@ -7,13 +7,13 @@
 class Function {
 public:
     // Returns g(x), throws exception on invalid input
-    double g(double x) const;
+    double g_evaluate(double x) const;
 
     // Returns g'(x), throws exception on invalid input
     double g_derivative(double x) const;
 
     // Returns f(x), throws exception on invalid input
-    double f(double x) const;
+    double f_evaluate(double x) const;
 
     // Returns f'(x), throws exception on invalid input
     double f_derivative(double x) const;
