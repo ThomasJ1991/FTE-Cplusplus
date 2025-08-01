@@ -13,10 +13,10 @@ public:
     double g_derivative(double x) const;
 
     // Returns f(x), throws exception on invalid input
-    double f_evaluate(double x) const;
+    double evaluate(double x) const;
 
     // Returns f'(x), throws exception on invalid input
-    double f_derivative(double x) const;
+    double derivative(double x) const;
 
     // Returns symbolic string
     std::string to_string() const;
