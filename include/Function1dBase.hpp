@@ -8,6 +8,4 @@ public:
     virtual ~Function1dBase() = default;
 };
 
-
-
 #endif //FUNCTION1D_BASE_HPP
